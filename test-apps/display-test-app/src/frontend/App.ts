@@ -225,7 +225,7 @@ export class DisplayTestApp {
   public static get iTwinId(): GuidString | undefined { return this._iTwinId; }
 
   public static async startup(configuration: DtaConfiguration, renderSys: RenderSystem.Options, tileAdmin: TileAdmin.Props): Promise<void> {
-    let socketUrl = new URL(configuration.customOrchestratorUri || "http://localhost:3001");
+    let socketUrl = new URL(configuration.customOrchestratorUri || "http://47.112.209.181:3001");
     socketUrl = LocalhostIpcApp.buildUrlForSocket(socketUrl);
     const realityDataClientOptions: RealityDataClientOptions = {
       /** API Version. v1 by default */
@@ -285,7 +285,7 @@ export class DisplayTestApp {
         await BrowserAuthorizationCallbackHandler.handleSigninCallback(redirectUri);
       }
 
-      const rpcParams: BentleyCloudRpcParams = { info: { title: "ui-test-app", version: "v1.0" }, uriPrefix: configuration.customOrchestratorUri || "http://localhost:3001" };
+      const rpcParams: BentleyCloudRpcParams = { info: { title: "ui-test-app", version: "v1.0" }, uriPrefix: configuration.customOrchestratorUri || "http://47.112.209.181:3001" };
       if (opts.iModelApp?.rpcInterfaces) // eslint-disable-line deprecation/deprecation
         BentleyCloudRpcManager.initializeClient(rpcParams, opts.iModelApp.rpcInterfaces); // eslint-disable-line deprecation/deprecation
       await LocalhostIpcApp.startup(opts);

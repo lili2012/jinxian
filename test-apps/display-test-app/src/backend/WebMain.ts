@@ -2,6 +2,7 @@
 * Copyright (c) Bentley Systems, Incorporated. All rights reserved.
 * See LICENSE.md in the project root for license terms and full copyright notice.
 *--------------------------------------------------------------------------------------------*/
+import * as compression from "compression";
 import * as express from "express";
 import * as fs from "fs";
 import * as https from "https";
@@ -44,6 +45,7 @@ const dtaWebMain = (async () => {
 
   const app = express();
   enableWs(app);
+  app.use(compression());
   app.use(express.text());
 
   // Enable CORS for all apis

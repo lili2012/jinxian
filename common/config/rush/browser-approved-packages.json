@@ -463,6 +463,10 @@
       "allowedCategories": [ "tools" ]
     },
     {
+      "name": "compression",
+      "allowedCategories": [ "internal" ]
+    },
+    {
       "name": "concurrently",
       "allowedCategories": [ "tools" ]
     },
@@ -525,6 +529,10 @@
     {
       "name": "express",
       "allowedCategories": [ "backend", "internal", "tools" ]
+    },
+    {
+      "name": "express-compression",
+      "allowedCategories": [ "internal" ]
     },
     {
       "name": "express-ws",
